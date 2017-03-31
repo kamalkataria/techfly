@@ -1,0 +1,44 @@
+{% extends 'tfems/base.html' %}
+{% block content %}
+    {% if nlin %}
+        <p class="text-danger">You are logged Out</p>
+        <a href="#" class="btn btn-danger btn-md">Login Again</a>
+    {% else %}
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+
+            <h1 class="text-danger text-center">Hello {{ uname }}</h1>
+            <center>
+            <a class="text-center btn btn-info btn-lg">+Employee</a>
+            </center>
+            {% if employees %}
+
+            <div class="table-responsive">
+            <table class="table table-condensed table-hover table-bordered">
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Working Hours</th>
+            <th>Joining Date</th>
+            <th>Address</th>
+            <th>Edit</th>
+            <th>Delete</th>
+
+
+
+
+        </table>
+            </div>
+                {% else %}
+                <h3 class="text-center text-danger">No employees.Add Some Employees</h3>
+                {% endif %}
+
+
+
+        </div>
+        <div class="col-sm-3"></div>
+
+    {% endif %}
+
+{% endblock %}

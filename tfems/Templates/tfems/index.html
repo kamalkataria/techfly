@@ -1,0 +1,22 @@
+{% extends 'tfems/base.html' %}
+{% block content %}
+
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6 well loginform">
+<form action="{% url "logintosys" %}" method="post">
+{% csrf_token %}
+<div class="form-group">
+    <input type="text" class="text-center form-control" placeholder="username" name="uname"/>
+</div>
+<div class="form-group">
+    <input type="text" class="text-center form-control" placeholder="password" name="upass"/>
+</div>
+
+<input type="submit" class="btn btn-md btn-success" value="Login" />
+</form>
+    </div>
+    <div class="col-sm-3"></div>
+
+
+
+{% endblock %}

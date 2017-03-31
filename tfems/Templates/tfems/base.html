@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'styles.css' %}" rel="stylesheet"/>
+
+    <script src="{% static 'javascript.js' %}"></script>
+    <script src="{% static 'jquery.js' %}"></script>
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+</head>
+<body class="">
+
+<h1 class="text-success text-center page-header">Techfly Management System</h1>
+
+{% block content %}
+{% endblock %}
+
+
+</body>
+</html>
