@@ -10,7 +10,7 @@ def logintosys(request):
         logx=LoginX.objects.filter(uname=uname,upass=password)
         if(len(logx)==1):
             emp=Employee.objects.all()
-            if(len(emp==0)):
+            if(len(Employee.objects.all())==0):
                 return render(request, 'tfems/techfly.html',{'uname':uname})
             else:
                 return render(request, 'tfems/techfly.html',{'uname':uname,'employee':emp})
@@ -21,4 +21,5 @@ def logintosys(request):
             return HttpResponse('Login Failed')
     else:
         return render(request, 'tfems/techfly.html',{'nlin':'Not Logged In'})
-
+def addemp(request):
+    

@@ -4,26 +4,44 @@
         <p class="text-danger">You are logged Out</p>
         <a href="#" class="btn btn-danger btn-md">Login Again</a>
     {% else %}
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6">
+        <div class="container">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
 
             <h1 class="text-danger text-center">Hello {{ uname }}</h1>
             <center>
-            <a class="text-center btn btn-info btn-lg">+Employee</a>
+            <a class="text-center btn btn-info btn-lg" href="{% url 'addemp' %}">+Employee</a>
             </center>
-            {% if employees %}
+            {% if employee %}
 
-            <div class="table-responsive">
+            <div class="">
             <table class="table table-condensed table-hover table-bordered">
-            <th>Name</th>
-            <th>Designation</th>
-            <th>Email</th>
-            <th>Phone Number</th>
-            <th>Working Hours</th>
-            <th>Joining Date</th>
-            <th>Address</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th class="danger">Name</th>
+            <th class="danger">Designation</th>
+            <th class="danger">Email</th>
+            <th class="danger">Phone Number</th>
+            <th class="danger">Working Hours</th>
+            <th class="danger">Joining Date</th>
+            <th class="danger">Address</th>
+            <th class="danger">Edit</th>
+            <th class="danger">Delete</th>
+                {% for emp in employee %}
+                <tr class="success">
+                <td>{{ emp.emp_name }}</td>
+                    <td>{{ emp.emp_designation }}</td>
+                <td>{{ emp.emp_email }}</td>
+                <td>{{ emp.emp_phone }}</td>
+                <td>{{ emp.emp_working_hours }}</td>
+                <td>{{ emp.emp_joining_date }}</td>
+                <td>{{ emp.emp_address }}</td>
+                <td><button class="btn btn-success btn-md">Edit</button></td>
+                <td><button class="btn btn-success btn-md">Delete</button></td>
+
+
+                </tr>
+
+
+                {% endfor %}
 
 
 
@@ -37,7 +55,8 @@
 
 
         </div>
-        <div class="col-sm-3"></div>
+        <div class="col-sm-2"></div>
+        </div>
 
     {% endif %}
 
