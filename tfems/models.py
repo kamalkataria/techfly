@@ -6,9 +6,9 @@ from django.db import models
 class Employee(models.Model):
     emp_name=models.CharField(max_length=100)
     emp_phone=models.CharField(max_length=13)
-    emp_email=models.CharField(max_length=100)
+    emp_email=models.EmailField(max_length=100)
     emp_designation=models.CharField(max_length=100)
-    emp_joining_date=models.DateField()
+    emp_joining_date=models.DateField(help_text='')
     emp_working_hours=models.IntegerField()
     emp_address=models.CharField(max_length=100)
 

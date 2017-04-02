@@ -1,11 +1,24 @@
-{%extends 'tfems/base.html'%}
+{% extends 'tfems/base.html' %}
+
+
+
 {%block content%}
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+
         <form class="well" role="form" action="" method="post">
             <h2 class="slategray page-header text-center">Signup</h2>
             {% csrf_token %}
             {{form.as_p}}
             <input class="btn btn-success btn-md" value="Add"/>
 
-        </form>
+        </form></div>
+<div class="col-sm-3"></div>
+<script type="text/javascript">
+       $(document).ready(function()
+        {
+            $('.datepicker').glDatePicker();
+        });
+    </script>
 
 {%endblock%}
