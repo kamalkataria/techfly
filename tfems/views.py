@@ -1,5 +1,6 @@
 from django.shortcuts import render,HttpResponse
 from tfems.models import LoginX,Employee
+from tfems.forms import EmployeeForm
 # Create your views here.
 def index(request):
     return render(request, 'tfems/index.html')
@@ -22,4 +23,5 @@ def logintosys(request):
     else:
         return render(request, 'tfems/techfly.html',{'nlin':'Not Logged In'})
 def addemp(request):
-    
+    formx=EmployeeForm()
+    return render(request,'tfems/addform.html',{'form':formx})

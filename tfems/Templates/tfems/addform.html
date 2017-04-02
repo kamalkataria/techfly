@@ -1,0 +1,11 @@
+{%extends 'tfems/base.html'%}
+{%block content%}
+        <form class="well" role="form" action="" method="post">
+            <h2 class="slategray page-header text-center">Signup</h2>
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="btn btn-success btn-md" value="Add"/>
+
+        </form>
+
+{%endblock%}
