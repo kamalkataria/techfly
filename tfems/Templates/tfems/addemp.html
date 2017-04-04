@@ -1,0 +1,21 @@
+{% extends 'tfems/base.html' %}
+{% block content %}
+    {% if formz %}
+         <form  method="POST" class="well" role="form" >
+            <h2 class="slategray page-header text-center">Edit Information of {{ empname }}</h2>
+            {% csrf_token %}
+            {{formz.as_p}}
+            <input type="submit" class="btn btn-success btn-md" value="Edit"/>
+
+        </form>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }} text-danger"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+    {% endif %}
+
+
+{% endblock %}

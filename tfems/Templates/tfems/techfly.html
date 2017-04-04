@@ -5,8 +5,8 @@
         <a href="#" class="btn btn-danger btn-md">Login Again</a>
     {% else %}
         <div class="container">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
+
+        <div class="col-sm-12   ">
 
             <h1 class="text-danger text-center">Hello {{ uname }}</h1>
             <center>
@@ -34,8 +34,8 @@
                 <td>{{ emp.emp_working_hours }}</td>
                 <td>{{ emp.emp_joining_date }}</td>
                 <td>{{ emp.emp_address }}</td>
-                <td><button class="btn btn-success btn-md">Edit</button></td>
-                <td><button class="btn btn-success btn-md">Delete</button></td>
+                <td><a class="btn btn-success btn-md" href="{% url 'editemp' emp.emp_name uname%}">Edit</a></td>
+                  <td><a class="btn btn-success btn-md" href="{% url 'delemp' emp.emp_name uname%}">Delete</a></td>
 
 
                 </tr>
@@ -55,7 +55,7 @@
 
 
         </div>
-        <div class="col-sm-2"></div>
+
         </div>
 
     {% endif %}

@@ -5,15 +5,32 @@
 {%block content%}
 <div class="col-sm-3"></div>
 <div class="col-sm-6">
+{% if form_status %}
+{% if form_status == "failed" %}
+    <div class="alert alert-danger">Form Invalid</div>
+    {% endif %}
+    {% if form_status == "success" %}
+    <div class="alert alert-success">Form saved</div>
+    {% endif %}
 
-        <form class="well" role="form" action="" method="post">
-            <h2 class="slategray page-header text-center">Signup</h2>
+{% endif %}
+        <form  method="POST" class="well" role="form" action="{% url 'addemp' %}">
+            <h2 class="slategray page-header text-center">Add Empployee</h2>
             {% csrf_token %}
             {{form.as_p}}
-            <input class="btn btn-success btn-md" value="Add"/>
+            <input type="submit" class="btn btn-success btn-md" value="Add"/>
 
         </form></div>
-<div class="col-sm-3"></div>
+<div class="col-sm-3">
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+</div>
 <script type="text/javascript">
        $(document).ready(function()
         {
