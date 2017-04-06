@@ -1,0 +1,86 @@
+{% extends 'log/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="container-fluid signupmain">
+<div class="col-sm-3"></div>
+    <div class="col-sm-6">
+
+        <div class="tab">
+            <button id="signup" class="tablinks play" onclick="openform(event,'signupform')">Signup</button>
+            <button id="login" class="tablinks play" onclick="openform(event,'loginform')">Login</button>
+
+
+        </div>
+        <div id="signupform" class="tabcontent well container-fluid">
+            <h3 class="text-center text-danger play">Signup</h3>
+            <div class="col-sm-2"></div>
+                        <div class="col-sm-8">
+
+            <form class="mlamra" method="post" action="{% url 'signup' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user">    </i> </span>
+                <input type="text" required class="play text-center form-control" name='username' placeholder="Username" aria-describedby="basic-addon1">
+                </div>
+                    </div>
+                <div class="form-group">
+                <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope">    </i> </span>
+                <input type="email" required class="play text-center form-control" name="email" placeholder="Email" aria-describedby="basic-addon1">
+                </div>
+                    </div>
+                 <div class="form-group">
+                <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key">    </i> </span>
+                <input type="password"
+                      required class="play form-control text-center" name='password' placeholder="Password" aria-describedby="basic-addon1">
+                </div>
+
+                    </div>
+                <button class="btn btn-md btn-info   ">Sign Up</button>
+
+            </form>
+                        </div>
+                        <div class="col-sm-2"></div>
+
+        </div>
+        <div id="loginform" class="tabcontent well
+         container-fluid">
+            <h3 class="text-center text-success play">Login</h3>
+            <div class="col-sm-2"></div>
+                        <div class="col-sm-8">
+
+            <form class="">
+                <div class="form-group">
+                <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user">    </i> </span>
+                <input type="text" required class="text-center play form-control" placeholder="Username" aria-describedby="basic-addon1">
+                </div>
+                </div>
+                    <div class="form-group">
+                <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key">    </i> </span>
+                <input type="text" required class="text-center play form-control" placeholder="Password" aria-describedby="basic-addon1">
+                </div></div>
+                <button class="btn btn-md btn-success">Login</button>
+
+
+            </form>
+                        </div>
+                        <div class="col-sm-2"></div>
+
+        </div>
+
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+{% endfor %}
+    </div>
+    <div class="col-sm-3"></div>
+
+
+</div>
+
+
+
+{% endblock %}

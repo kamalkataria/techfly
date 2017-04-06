@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from tfems import urls
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/',include('tfems.urls')),
+    url(r'',include('log.urls')),
 
 
 ]

@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'fontawesome/css/font-awesome.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'styles.css' %}" rel="stylesheet"/>
+    <link href="{%static 'glDatePicker.darkneon.css'%}" rel="stylesheet"/>
+    <link href="{%static 'glDatePicker.default.css'%}" rel="stylesheet"/>
+
+    <script src="{% static 'javascript.js' %}"></script>
+    <script src="{% static 'jquery.js' %}"></script>
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+    <script src="{% static 'glDatePicker.min.js'%}"></script>
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+
+</head>
+<body class="loginbody">
+
+
+{% block content %}
+{% endblock %}
+
+
+</body>
+</html>

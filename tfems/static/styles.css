@@ -8,3 +8,55 @@ body{
 textarea{
     resize: none;
 }
+.loginbody{
+    /*background-image: url("images/pink_pattern_stock-wide.jpg");*/
+    background-size: cover;
+
+
+}
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: rgba(47,79,79,0.6);
+    margin-top: 10%;
+}
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    color:white;
+}
+div.tab button:hover {
+    background-color: orangered;
+}
+div.tab button.active {
+    background-color: crimson;
+}
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    /*background-color: rgba(47,79,79,0.6);*/
+    padding-bottom: 50px;
+}
+.play{
+    font-family: 'Play', sans-serif;
+
+}
+.signupmain form input{
+    width:100%!important;
+}
+.input-group{
+    margin-left: auto!important;
+    margin-right: auto!important;
+}
+.form-group{
+    margin-left:auto!important;
+    margin-right:auto!important;
+    display:block!important;
+}
